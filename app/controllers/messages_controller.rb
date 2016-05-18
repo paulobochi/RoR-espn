@@ -11,7 +11,7 @@ class MessagesController < ApplicationController
   end
 
   def create
-    @message = Message.new(messages_params)
+    @message = Message.new(message_params)
 
     if @message.save
       redirect_to root_path
@@ -27,8 +27,8 @@ class MessagesController < ApplicationController
   end
 
   def update
-    if @message.update(messages_params)
-      redirect_to @message
+    if @message.update(message_params)
+      redirect_to messages_path
     else
       render 'edit'
     end
@@ -41,7 +41,7 @@ class MessagesController < ApplicationController
 
   private
 
-  def messages_params
+  def message_params
     params.required(:message).permit(:title, :description)
   end
 
