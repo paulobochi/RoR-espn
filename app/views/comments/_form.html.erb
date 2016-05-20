@@ -1,0 +1,4 @@
+<%= simple_form_for ([@message, @message.comment_threads.build]) do |f| %>
+  <%= f.input :body , label: "Comments"%>
+  <%= f.button :submit, class: 'btn btn-primary' %>
+<% end %>
