@@ -1,7 +1,8 @@
 class MessagesController < ApplicationController
 
-  before_action :find_message, only: [:show, :edit, :update, :destroy]
-
+  before_action :find_message, only: [:show]
+  before_action :find_message_to_edit, only: [:edit, :update, :destroy]
+  
   def index
     @messages = Message.all.order('created_at DESC')
   end
@@ -47,6 +48,10 @@ class MessagesController < ApplicationController
 
   def find_message
     @message = Message.find(params[:id])
+  end
+
+  def find_message_to_edit
+    @message = current_user.messages.find(params[:id])
   end
 
 end
