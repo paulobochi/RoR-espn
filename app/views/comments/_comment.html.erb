@@ -6,4 +6,12 @@
     By: <%= comment.user.email %>
     <%= time_ago_in_words(comment.created_at) %> ago
   </p>
+
+  <% if user_signed_in? && comment.user_id == current_user.id %>
+    <div class='links'>
+      <%= link_to 'Edit', edit_message_comment_path(comment.commentable, comment) %>
+      <%= link_to 'Delete', message_comment_path(comment.commentable, comment), method: :delete, data: { confirm: 'Are you sure?' } %>
+    </div>
+  <% end %>
+
 </div>
