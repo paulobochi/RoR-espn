@@ -6,7 +6,7 @@ class CommentsController < ApplicationController
 
   def create
     @comment = Comment.build_from(@message, current_user.id, comment_params[:body])
-
+    
     if @comment.save
       redirect_to message_path(@message)
     else

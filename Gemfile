@@ -27,6 +27,8 @@ gem 'bootstrap-sass', '~> 3.3.6'
 gem 'simple_form', '~> 3.2.1'
 gem 'devise', '~> 4.1.1'
 gem 'acts_as_commentable_with_threading', '~> 2.0.1'
+gem 'disqus_rails', '~> 0.0.6'
+gem 'jquery-turbolinks', '~> 2.1.0'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
